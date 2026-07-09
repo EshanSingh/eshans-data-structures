@@ -2,6 +2,17 @@
 
 A clean, from-scratch Python implementation of an **ArrayList**.
 
+## Interact
+
+First navigate to this directory, then run
+
+```bash
+./playground.py
+```
+
+This will allow you to use `ArrayList` and visualize whats happening inside.
+NOTE: All code related to playground was AI generated
+
 ## Overview
 
 An ArrayList is a modfication of the traditional array that improves on its shortcomings. One of the shortcomings of arrays was that it is unable to dynamically resize. ArrayList solved that by creating a copy of the array and doubling it's size once it reaches max capacity ($O(n)$). This is a costly one-time cost that becomes ammortized to $O(1)$ since it does not occur very often. This single optimization allows for a much more streamlined developer appraoch, since there is no longer any need for manual array resizing.

@@ -74,3 +74,24 @@ class ArrayList():
         if index >= self.size:
             raise IndexError('set index is out of bounds')
         self.arr[index] = value
+
+
+
+    # AI WRITTEN METHOD
+    
+    def visualize(self, operation_name="Current State"):
+        """Prints a visual representation of the internal memory array."""
+        print(f"▶ {operation_name.upper()}")
+        print(f"  Size: {self.size} | Capacity: {self.capacity}")
+        
+        blocks = []
+        for i in range(self.capacity):
+            if i < self.size:
+                # Active elements shown in brackets
+                blocks.append(f"[{self.arr[i]}]") 
+            else:
+                # Unused buffer capacity shown as empty slots
+                blocks.append("[ - ]") 
+                
+        print("  Memory: " + " ".join(blocks))
+        print("-" * 50)
