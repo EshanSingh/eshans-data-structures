@@ -7,7 +7,7 @@ A clean, from-scratch Python implementation of an **ArrayList**.
 First navigate to this directory, then run
 
 ```bash
-./playground.py
+python playground.py
 ```
 
 This will allow you to use `ArrayList` and visualize whats happening inside.
