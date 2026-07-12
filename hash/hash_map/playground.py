@@ -3,10 +3,15 @@
 
 import sys, os
 
-# hash_map/  ->  hash/   (the folder that holds the `lists` package)
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.stdout.reconfigure(encoding="utf-8")
 
-from hash_map import HashMap, LOAD_CAPACITY
+# hash_map/  ->  hash/  ->  Projects/  (the folder that holds the `lists` package)
+_hash_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+_projects_dir = os.path.dirname(_hash_dir)
+sys.path.insert(0, _hash_dir)
+sys.path.insert(0, _projects_dir)
+
+from hash_map.hash_map import HashMap, LOAD_CAPACITY
 
 def coerce(raw):
     """Turn a raw input string into an int/float when it looks numeric.
