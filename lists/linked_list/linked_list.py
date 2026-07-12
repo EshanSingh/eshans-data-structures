@@ -54,7 +54,17 @@ class LinkedList():
                 cur_idx+=1
 
         return cur
+    
+    def _navigate_to_node_val(self,value):
 
+        cur = self.head.next
+
+        while cur!=self.tail:
+            if cur.val == value:
+                return cur
+            cur = cur.next
+        
+        return False
 
     
     # INSERTION
@@ -86,9 +96,7 @@ class LinkedList():
             self.append(value)
             return
         
-
         cur = self._navigate_to_node(index)
-        
 
         new_node = self.Node(value,cur,cur.prev)
 
@@ -152,6 +160,22 @@ class LinkedList():
         return popped_node.val
     
 
+    def remove_val(self, value):
+        
+        cur = self._navigate_to_node_val(value)
+
+        if cur:
+
+            cur.prev.next = cur.next
+            cur.next.prev = cur.prev
+            self.size-=1
+
+            return cur.val
+
+        return False
+
+    
+
     # GETTERS AND SETTERS
         
     def get(self, index):
@@ -159,6 +183,13 @@ class LinkedList():
             raise IndexError('index out of bounds')
         
         return self._navigate_to_node(index).val
+    
+    def get_by_val(self,val):
+        node = self._navigate_to_node_val(val)
+        if node:
+            return node.val
+    
+        raise ValueError('value does not exist')
         
     def set(self, index, value):
         if index >=self.size or index < 0:
@@ -166,3 +197,4 @@ class LinkedList():
         
         node = self._navigate_to_node(index)
         node.val = value
+
