@@ -48,10 +48,16 @@ class HashMap():
 
     # API Methods
 
+    def is_empty(self):
+        return self.size==0
+
     def put(self, key, value):
         hash_idx = self._hash(key) % self.capacity
 
-        lst = self.map.get(hash_idx)
+        try:
+            lst = self.map.get(hash_idx)
+        except:
+            raise KeyError('key not found')
 
         val_removed = lst.remove_val(self.HashNode(key,None))
         lst.append(self.HashNode(key,value))
@@ -65,7 +71,10 @@ class HashMap():
     
     def remove(self, key):
         hash_idx = self._hash(key) % self.capacity
-        lst = self.map.get(hash_idx)
+        try:
+            lst = self.map.get(hash_idx)
+        except:
+            raise KeyError('key not found')
         val_removed = lst.remove_val(self.HashNode(key,None))
 
         if val_removed:
@@ -73,7 +82,11 @@ class HashMap():
     
     def get(self, key):
         hash_idx = self._hash(key) % self.capacity
-        lst = self.map.get(hash_idx)
+        try:
+            lst = self.map.get(hash_idx)
+        except:
+            raise KeyError('key not found')
+
         node = lst.get_by_val(self.HashNode(key,None))
 
         return node.val

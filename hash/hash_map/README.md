@@ -45,6 +45,7 @@ The **load factor** ($\text{size} / \text{capacity}$) ensures the hashmaps bucke
 - `put(key, value)`: inserts `key` with `value`, or overwrites the value if `key` already exists
 - `get(key)`: hashes to the correct bucket and returns the value stored under `key`
 - `remove(key)`: hashes to the correct bucket and removes the entry for `key` if present
+- `is_empty()`: checks if map is empty
 
 Internal helpers:
 
