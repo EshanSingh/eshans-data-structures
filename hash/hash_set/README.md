@@ -41,6 +41,7 @@ A HashSet is fundamentally a HashMap/HashTable, without using the values. it has
 - `add(item, value)`: inserts `item` or overwrites it if `item` already exists (uses [`HashMap`](../hash_map/)'s `put()` under the hood)
 - `get(item)`: hashes to the correct bucket and returns the value stored under `item` (uses [`HashMap`](../hash_map/)'s `get()` under the hood)
 - `remove(item)`: hashes to the correct bucket and removes the entry for `item` if present (uses [`HashMap`](../hash_map/)'s `remove()` under the hood)
+- `discard(item)`:same as `remove()` but does not throw an error if key isnt found
 - `is_empty()` checks if set is empty (uses [`HashMap`](../hash_map/)'s `is_empty()` under the hood)
 
 ---
