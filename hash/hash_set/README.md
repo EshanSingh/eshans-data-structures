@@ -15,7 +15,7 @@ NOTE: All code related to playground was AI generated
 
 ## Overview
 
-A HashSet is fundamentally a HashMap/HashTable, without using the values. it has all the same time complexities, and solves the same problem of accesssing by element in $O(1)$ time. I decided to reuse my HashMap class to do the majority of the under-the-hood logic, since there is no use to reinvent the wheel.
+A HashSet is fundamentally a HashMap/HashTable, without using the values. it has all the same time complexities, and solves the same problem of accesssing by element in $O(1)$ time. I decided to reuse my [`HashMap`](../hash_map/) class to do the majority of the under-the-hood logic, since I didn't want to reinvent the wheel.
 
 ---
 
