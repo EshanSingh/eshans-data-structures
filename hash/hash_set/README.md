@@ -1,4 +1,4 @@
-# Hash Map
+# Hash Set
 
 A clean, from-scratch Python implementation of a **HashSet**.
 
